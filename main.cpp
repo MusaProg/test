@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -32,6 +33,7 @@ int main()
 int generate_number(int start, int finish)
 {
     int length = finish - start;
+    srand(time(NULL));
     int a = rand() % length;
     return start + a;
 }
