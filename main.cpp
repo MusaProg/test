@@ -1,9 +1,26 @@
 #include <iostream>
+#include <stdlib.h>
 
+using namespace std;
+
+int generate_number(int start, int finish);
 
 int main()
 {
-    for (int i = 0, j = 10; i < 10 && j <= 100; i++, j += 3)
-        std::cout << "Hello, Albina\n";
+    int start = 1;
+    int finish = 100;
+    setlocale(LC_CTYPE, "Russian");
+    int number = generate_number(start, finish);
+
+    int a;
+    do
+    {
+        cout << "Введите число: ";
+        cin >> a;
+        if (a < number) cout << "Вы ввели число, меньшее загаданного. Попробуйте еще раз\n";
+        else if (a > number) cout << "Вы ввели число, большее загаданного. Попробуйте еще раз\n";
+        else {cout << "Вы угадали!\n"; break;}
+    } while(true);
+
     return 0;
 }
