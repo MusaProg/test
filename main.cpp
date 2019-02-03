@@ -1,9 +1,19 @@
 #include <iostream>
+#include <stdlib.h>
 
+int generate_number(int start, int finish)
+{
+    int length = finish - start;
+    int a = rand() % length;
+    return start + a;
+}
 
 int main()
 {
-    for (int i = 0, j = 10; i < 10 && j <= 100; i++, j += 3)
-        std::cout << "Hello, Albina\n";
+    /*  Тест!
+    int start, finish;
+    std::cin >> start >> finish;
+    std::cout << generate_number(start, finish);
+    */
     return 0;
 }
